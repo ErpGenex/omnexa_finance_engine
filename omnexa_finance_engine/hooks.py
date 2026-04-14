@@ -1,5 +1,5 @@
 app_name = "omnexa_finance_engine"
-app_title = "Omnexa Finance Engine"
+app_title = "ErpGenEx — Finance Engine"
 app_publisher = "Omnexa"
 app_description = "Shared finance engine services"
 app_email = "dev@omnexa.com"
