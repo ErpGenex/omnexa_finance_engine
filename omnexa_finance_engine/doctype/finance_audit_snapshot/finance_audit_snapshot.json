@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "process_name",
+  "policy_ref",
+  "actor",
+  "created_at",
+  "snapshot_hash",
+  "inputs_json",
+  "outputs_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "process_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Process Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_ref",
+   "fieldtype": "Data",
+   "label": "Policy Ref"
+  },
+  {
+   "fieldname": "actor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Actor",
+   "options": "User"
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Created At"
+  },
+  {
+   "fieldname": "snapshot_hash",
+   "fieldtype": "Data",
+   "label": "Snapshot Hash",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "inputs_json",
+   "fieldtype": "Long Text",
+   "label": "Inputs JSON",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outputs_json",
+   "fieldtype": "Long Text",
+   "label": "Outputs JSON",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "module": "Omnexa Finance Engine",
+ "name": "Finance Audit Snapshot",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
+

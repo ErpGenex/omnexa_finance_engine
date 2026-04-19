@@ -1,0 +1,70 @@
+{
+ "charts": [
+  {
+   "chart_name": "Finance Engine Governance - Policies by Status",
+   "label": "Policies by Status"
+  },
+  {
+   "chart_name": "Finance Engine Governance - Snapshots (Last Month)",
+   "label": "Snapshots (Last Month)"
+  }
+ ],
+ "content": "[{\"id\": \"omnexa_finance_engine-h\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Finance Engine Governance</b></span>\", \"col\": 12}}, {\"id\": \"omnexa_finance_engine-c1\", \"type\": \"card\", \"data\": {\"card_name\": \"Governance\", \"col\": 4}}, {\"id\": \"omnexa_finance_engine-ch1\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Finance Engine Governance - Policies by Status\", \"col\": 4}}, {\"id\": \"omnexa_finance_engine-ch2\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Finance Engine Governance - Snapshots (Last Month)\", \"col\": 4}}]",
+ "creation": "2026-04-17 15:39:31.271342",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Finance Engine Governance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Governance",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break",
+   "icon": "shield"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Policy Versions",
+   "link_count": 0,
+   "link_to": "Finance Policy Version",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link",
+   "icon": "file-text"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Snapshots",
+   "link_count": 0,
+   "link_to": "Finance Audit Snapshot",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link",
+   "icon": "activity"
+  }
+ ],
+ "modified": "2026-04-17 16:06:03.484935",
+ "modified_by": "Administrator",
+ "module": "Omnexa Finance Engine",
+ "name": "Finance Engine Governance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "Finance Group",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [],
+ "title": "Finance Engine Governance"
+}
