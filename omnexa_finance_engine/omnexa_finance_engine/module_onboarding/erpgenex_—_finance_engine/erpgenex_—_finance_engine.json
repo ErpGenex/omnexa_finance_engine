@@ -1,0 +1,41 @@
+{
+ "allow_roles": [
+  {
+   "role": "Desk User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-04-20 00:31:41.059945",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://frappe.io/framework",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-04-20 02:24:46.031167",
+ "modified_by": "Administrator",
+ "module": "Omnexa Finance Engine",
+ "name": "ERPGENEX \u2014 Finance Engine",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "ERPGENEX-WS-finance_engine-01-finance_product"
+  },
+  {
+   "step": "ERPGENEX-WS-finance_engine-02-finance_contract_account"
+  },
+  {
+   "step": "ERPGENEX-WS-finance_engine-03-finance_calc_run"
+  },
+  {
+   "step": "ERPGENEX-WS-finance_engine-04-finance_scenario_run"
+  },
+  {
+   "step": "ERPGENEX-WS-finance_engine-home"
+  }
+ ],
+ "subtitle": "Guided setup for this workspace.",
+ "success_message": "You are ready to work in Finance Engine.",
+ "title": "ERPGENEX \u00b7 Finance Engine"
+}
