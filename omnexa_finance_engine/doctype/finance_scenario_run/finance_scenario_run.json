@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_account",
   "scenario_name",
   "run_status",
@@ -13,18 +14,79 @@
   "input_json",
   "scenario_json",
   "output_json",
-  "explain_json"
+  "explain_json",
+  "control_section",
+  "scenario_reference"
  ],
  "fields": [
-  {"fieldname": "contract_account", "fieldtype": "Link", "label": "Contract Account", "options": "Finance Contract Account", "in_list_view": 1},
-  {"fieldname": "scenario_name", "fieldtype": "Data", "label": "Scenario Name", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "run_status", "fieldtype": "Select", "label": "Run Status", "options": "SUCCESS\nFAILED", "default": "SUCCESS", "in_list_view": 1},
-  {"fieldname": "idempotency_key", "fieldtype": "Data", "label": "Idempotency Key"},
-  {"fieldname": "input_hash", "fieldtype": "Data", "label": "Input Hash", "in_list_view": 1},
-  {"fieldname": "input_json", "fieldtype": "Long Text", "label": "Input JSON"},
-  {"fieldname": "scenario_json", "fieldtype": "Long Text", "label": "Scenario JSON"},
-  {"fieldname": "output_json", "fieldtype": "Long Text", "label": "Output JSON"},
-  {"fieldname": "explain_json", "fieldtype": "Long Text", "label": "Explain JSON"}
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Scenario Run Identity"
+  },
+  {
+   "fieldname": "contract_account",
+   "fieldtype": "Link",
+   "label": "Contract Account",
+   "options": "Finance Contract Account",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scenario_name",
+   "fieldtype": "Data",
+   "label": "Scenario Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "run_status",
+   "fieldtype": "Select",
+   "label": "Run Status",
+   "options": "SUCCESS\nFAILED",
+   "default": "SUCCESS",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "idempotency_key",
+   "fieldtype": "Data",
+   "label": "Idempotency Key"
+  },
+  {
+   "fieldname": "input_hash",
+   "fieldtype": "Data",
+   "label": "Input Hash",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "input_json",
+   "fieldtype": "Long Text",
+   "label": "Input JSON"
+  },
+  {
+   "fieldname": "scenario_json",
+   "fieldtype": "Long Text",
+   "label": "Scenario JSON"
+  },
+  {
+   "fieldname": "output_json",
+   "fieldtype": "Long Text",
+   "label": "Output JSON"
+  },
+  {
+   "fieldname": "explain_json",
+   "fieldtype": "Long Text",
+   "label": "Explain JSON"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "scenario_reference",
+   "fieldtype": "Data",
+   "label": "Scenario Reference"
+  }
  ],
  "index_web_pages_for_search": 1,
  "module": "Omnexa Finance Engine",

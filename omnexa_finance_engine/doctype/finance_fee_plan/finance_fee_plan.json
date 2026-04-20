@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "product",
   "plan_name",
   "version",
@@ -17,22 +18,105 @@
   "max_fee",
   "penalty_rate",
   "effective_from",
-  "effective_to"
+  "effective_to",
+  "control_section",
+  "approval_role"
  ],
  "fields": [
-  {"fieldname": "product", "fieldtype": "Link", "label": "Product", "options": "Finance Product", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "plan_name", "fieldtype": "Data", "label": "Plan Name", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "version", "fieldtype": "Data", "label": "Version", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "company_code", "fieldtype": "Data", "label": "Company Code", "default": "DEFAULT"},
-  {"fieldname": "branch_code", "fieldtype": "Data", "label": "Branch Code", "default": "HQ"},
-  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED", "default": "DRAFT"},
-  {"fieldname": "fee_type", "fieldtype": "Select", "label": "Fee Type", "options": "FIXED\nPERCENTAGE\nTIERED\nPENALTY", "reqd": 1},
-  {"fieldname": "fee_value", "fieldtype": "Float", "label": "Fee Value", "reqd": 1},
-  {"fieldname": "min_fee", "fieldtype": "Currency", "label": "Minimum Fee"},
-  {"fieldname": "max_fee", "fieldtype": "Currency", "label": "Maximum Fee"},
-  {"fieldname": "penalty_rate", "fieldtype": "Percent", "label": "Penalty Rate"},
-  {"fieldname": "effective_from", "fieldtype": "Date", "label": "Effective From"},
-  {"fieldname": "effective_to", "fieldtype": "Date", "label": "Effective To"}
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Fee Plan Identity"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "label": "Product",
+   "options": "Finance Product",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company_code",
+   "fieldtype": "Data",
+   "label": "Company Code",
+   "default": "DEFAULT"
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Data",
+   "label": "Branch Code",
+   "default": "HQ"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
+   "default": "DRAFT"
+  },
+  {
+   "fieldname": "fee_type",
+   "fieldtype": "Select",
+   "label": "Fee Type",
+   "options": "FIXED\nPERCENTAGE\nTIERED\nPENALTY",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fee_value",
+   "fieldtype": "Float",
+   "label": "Fee Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "min_fee",
+   "fieldtype": "Currency",
+   "label": "Minimum Fee"
+  },
+  {
+   "fieldname": "max_fee",
+   "fieldtype": "Currency",
+   "label": "Maximum Fee"
+  },
+  {
+   "fieldname": "penalty_rate",
+   "fieldtype": "Percent",
+   "label": "Penalty Rate"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Governance"
+  },
+  {
+   "fieldname": "approval_role",
+   "fieldtype": "Data",
+   "label": "Approval Role"
+  }
  ],
  "index_web_pages_for_search": 1,
  "module": "Omnexa Finance Engine",
