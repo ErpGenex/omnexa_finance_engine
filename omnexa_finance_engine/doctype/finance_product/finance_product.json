@@ -1,190 +1,188 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "format:FIN-PROD-.{#####}",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "identity_section",
-  "product_name",
-  "product_code",
-  "status",
-  "company_code",
-  "branch_code",
-  "pending_status",
-  "status_submitted_by",
-  "status_submitted_on",
-  "status_approved_by",
-  "status_approved_on",
-  "currency",
-  "country_code",
-  "interest_method",
-  "default_annual_rate",
-  "default_periods",
-  "payment_frequency",
-  "day_count",
-  "ifrs9_enabled",
-  "gaap_enabled",
-  "control_section",
-  "classification_code"
- ],
- "fields": [
-  {
-   "fieldname": "identity_section",
-   "fieldtype": "Section Break",
-   "label": "Product Identity"
-  },
-  {
-   "fieldname": "product_name",
-   "fieldtype": "Data",
-   "label": "Product Name",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "product_code",
-   "fieldtype": "Data",
-   "label": "Product Code",
-   "reqd": 1,
-   "unique": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
-   "default": "DRAFT",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "company_code",
-   "fieldtype": "Data",
-   "label": "Company Code",
-   "default": "DEFAULT"
-  },
-  {
-   "fieldname": "branch_code",
-   "fieldtype": "Data",
-   "label": "Branch Code",
-   "default": "HQ"
-  },
-  {
-   "fieldname": "pending_status",
-   "fieldtype": "Select",
-   "label": "Pending Status Change",
-   "options": "\nDRAFT\nACTIVE\nSUSPENDED\nRETIRED"
-  },
-  {
-   "fieldname": "status_submitted_by",
-   "fieldtype": "Link",
-   "label": "Status Submitted By",
-   "options": "User"
-  },
-  {
-   "fieldname": "status_submitted_on",
-   "fieldtype": "Datetime",
-   "label": "Status Submitted On"
-  },
-  {
-   "fieldname": "status_approved_by",
-   "fieldtype": "Link",
-   "label": "Status Approved By",
-   "options": "User"
-  },
-  {
-   "fieldname": "status_approved_on",
-   "fieldtype": "Datetime",
-   "label": "Status Approved On"
-  },
-  {
-   "fieldname": "currency",
-   "fieldtype": "Link",
-   "label": "Currency",
-   "options": "Currency",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "country_code",
-   "fieldtype": "Data",
-   "label": "Country Code",
-   "default": "INTL"
-  },
-  {
-   "fieldname": "interest_method",
-   "fieldtype": "Select",
-   "label": "Interest Method",
-   "options": "ANNUITY\nEQUAL_PRINCIPAL\nSIMPLE\nCOMPOUND\nDECLINING_BALANCE",
-   "default": "ANNUITY"
-  },
-  {
-   "fieldname": "default_annual_rate",
-   "fieldtype": "Percent",
-   "label": "Default Annual Rate",
-   "default": "0"
-  },
-  {
-   "fieldname": "default_periods",
-   "fieldtype": "Int",
-   "label": "Default Periods",
-   "default": "12"
-  },
-  {
-   "fieldname": "payment_frequency",
-   "fieldtype": "Select",
-   "label": "Payment Frequency",
-   "options": "MONTHLY\nWEEKLY\nFORTNIGHTLY\nDAILY",
-   "default": "MONTHLY"
-  },
-  {
-   "fieldname": "day_count",
-   "fieldtype": "Select",
-   "label": "Day Count",
-   "options": "ACT_365F\nACT_360\nTHIRTY_360",
-   "default": "ACT_365F"
-  },
-  {
-   "fieldname": "ifrs9_enabled",
-   "fieldtype": "Check",
-   "label": "IFRS9 Enabled",
-   "default": "1"
-  },
-  {
-   "fieldname": "gaap_enabled",
-   "fieldtype": "Check",
-   "label": "GAAP Enabled",
-   "default": "1"
-  },
-  {
-   "fieldname": "control_section",
-   "fieldtype": "Section Break",
-   "label": "Control"
-  },
-  {
-   "fieldname": "classification_code",
-   "fieldtype": "Data",
-   "label": "Classification Code"
-  }
- ],
- "index_web_pages_for_search": 1,
- "module": "Omnexa Finance Engine",
- "name": "Finance Product",
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "format:FIN-PROD-.{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"product_name",
+		"product_code",
+		"status",
+		"company_code",
+		"branch_code",
+		"pending_status",
+		"column_break_omnexa_1",
+		"status_submitted_by",
+		"status_submitted_on",
+		"status_approved_by",
+		"status_approved_on",
+		"currency",
+		"country_code",
+		"interest_method",
+		"column_break_omnexa_2",
+		"default_annual_rate",
+		"default_periods",
+		"payment_frequency",
+		"day_count",
+		"ifrs9_enabled",
+		"gaap_enabled",
+		"classification_code"
+	],
+	"fields": [
+		{
+			"fieldname": "product_name",
+			"fieldtype": "Data",
+			"label": "Product Name",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "product_code",
+			"fieldtype": "Data",
+			"label": "Product Code",
+			"reqd": 1,
+			"unique": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
+			"default": "DRAFT",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company_code",
+			"fieldtype": "Data",
+			"label": "Company Code",
+			"default": "DEFAULT"
+		},
+		{
+			"fieldname": "branch_code",
+			"fieldtype": "Data",
+			"label": "Branch Code",
+			"default": "HQ"
+		},
+		{
+			"fieldname": "pending_status",
+			"fieldtype": "Select",
+			"label": "Pending Status Change",
+			"options": "\nDRAFT\nACTIVE\nSUSPENDED\nRETIRED"
+		},
+		{
+			"fieldname": "status_submitted_by",
+			"fieldtype": "Link",
+			"label": "Status Submitted By",
+			"options": "User"
+		},
+		{
+			"fieldname": "status_submitted_on",
+			"fieldtype": "Datetime",
+			"label": "Status Submitted On"
+		},
+		{
+			"fieldname": "status_approved_by",
+			"fieldtype": "Link",
+			"label": "Status Approved By",
+			"options": "User"
+		},
+		{
+			"fieldname": "status_approved_on",
+			"fieldtype": "Datetime",
+			"label": "Status Approved On"
+		},
+		{
+			"fieldname": "currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "country_code",
+			"fieldtype": "Data",
+			"label": "Country Code",
+			"default": "INTL"
+		},
+		{
+			"fieldname": "interest_method",
+			"fieldtype": "Select",
+			"label": "Interest Method",
+			"options": "ANNUITY\nEQUAL_PRINCIPAL\nSIMPLE\nCOMPOUND\nDECLINING_BALANCE",
+			"default": "ANNUITY"
+		},
+		{
+			"fieldname": "default_annual_rate",
+			"fieldtype": "Percent",
+			"label": "Default Annual Rate",
+			"default": "0"
+		},
+		{
+			"fieldname": "default_periods",
+			"fieldtype": "Int",
+			"label": "Default Periods",
+			"default": "12"
+		},
+		{
+			"fieldname": "payment_frequency",
+			"fieldtype": "Select",
+			"label": "Payment Frequency",
+			"options": "MONTHLY\nWEEKLY\nFORTNIGHTLY\nDAILY",
+			"default": "MONTHLY"
+		},
+		{
+			"fieldname": "day_count",
+			"fieldtype": "Select",
+			"label": "Day Count",
+			"options": "ACT_365F\nACT_360\nTHIRTY_360",
+			"default": "ACT_365F"
+		},
+		{
+			"fieldname": "ifrs9_enabled",
+			"fieldtype": "Check",
+			"label": "IFRS9 Enabled",
+			"default": "1"
+		},
+		{
+			"fieldname": "gaap_enabled",
+			"fieldtype": "Check",
+			"label": "GAAP Enabled",
+			"default": "1"
+		},
+		{
+			"fieldname": "classification_code",
+			"fieldtype": "Data",
+			"label": "Classification Code"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Product",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
 }

@@ -1,123 +1,121 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "hash",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "identity_section",
-  "product",
-  "plan_name",
-  "version",
-  "company_code",
-  "branch_code",
-  "status",
-  "annual_rate",
-  "compounding_basis",
-  "effective_from",
-  "effective_to",
-  "control_section",
-  "rate_reference"
- ],
- "fields": [
-  {
-   "fieldname": "identity_section",
-   "fieldtype": "Section Break",
-   "label": "Rate Plan Identity"
-  },
-  {
-   "fieldname": "product",
-   "fieldtype": "Link",
-   "label": "Product",
-   "options": "Finance Product",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "plan_name",
-   "fieldtype": "Data",
-   "label": "Plan Name",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "version",
-   "fieldtype": "Data",
-   "label": "Version",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "company_code",
-   "fieldtype": "Data",
-   "label": "Company Code",
-   "default": "DEFAULT"
-  },
-  {
-   "fieldname": "branch_code",
-   "fieldtype": "Data",
-   "label": "Branch Code",
-   "default": "HQ"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
-   "default": "DRAFT"
-  },
-  {
-   "fieldname": "annual_rate",
-   "fieldtype": "Percent",
-   "label": "Annual Rate",
-   "reqd": 1
-  },
-  {
-   "fieldname": "compounding_basis",
-   "fieldtype": "Select",
-   "label": "Compounding Basis",
-   "options": "SIMPLE\nCOMPOUND\nAMORTIZED\nDECLINING_BALANCE",
-   "default": "AMORTIZED"
-  },
-  {
-   "fieldname": "effective_from",
-   "fieldtype": "Date",
-   "label": "Effective From"
-  },
-  {
-   "fieldname": "effective_to",
-   "fieldtype": "Date",
-   "label": "Effective To"
-  },
-  {
-   "fieldname": "control_section",
-   "fieldtype": "Section Break",
-   "label": "Control"
-  },
-  {
-   "fieldname": "rate_reference",
-   "fieldtype": "Data",
-   "label": "Rate Reference"
-  }
- ],
- "index_web_pages_for_search": 1,
- "module": "Omnexa Finance Engine",
- "name": "Finance Rate Plan",
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"product",
+		"plan_name",
+		"version",
+		"column_break_omnexa_1",
+		"company_code",
+		"branch_code",
+		"status",
+		"annual_rate",
+		"column_break_omnexa_2",
+		"compounding_basis",
+		"effective_from",
+		"effective_to",
+		"rate_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "product",
+			"fieldtype": "Link",
+			"label": "Product",
+			"options": "Finance Product",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "plan_name",
+			"fieldtype": "Data",
+			"label": "Plan Name",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "version",
+			"fieldtype": "Data",
+			"label": "Version",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company_code",
+			"fieldtype": "Data",
+			"label": "Company Code",
+			"default": "DEFAULT"
+		},
+		{
+			"fieldname": "branch_code",
+			"fieldtype": "Data",
+			"label": "Branch Code",
+			"default": "HQ"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
+			"default": "DRAFT"
+		},
+		{
+			"fieldname": "annual_rate",
+			"fieldtype": "Percent",
+			"label": "Annual Rate",
+			"reqd": 1
+		},
+		{
+			"fieldname": "compounding_basis",
+			"fieldtype": "Select",
+			"label": "Compounding Basis",
+			"options": "SIMPLE\nCOMPOUND\nAMORTIZED\nDECLINING_BALANCE",
+			"default": "AMORTIZED"
+		},
+		{
+			"fieldname": "effective_from",
+			"fieldtype": "Date",
+			"label": "Effective From"
+		},
+		{
+			"fieldname": "effective_to",
+			"fieldtype": "Date",
+			"label": "Effective To"
+		},
+		{
+			"fieldname": "rate_reference",
+			"fieldtype": "Data",
+			"label": "Rate Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Rate Plan",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
 }
