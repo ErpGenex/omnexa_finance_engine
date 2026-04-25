@@ -1,0 +1,107 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"contract_account",
+		"schedule_version",
+		"run_type",
+		"run_status",
+		"idempotency_key",
+		"input_hash",
+		"input_json",
+		"output_json",
+		"explain_json",
+		"event_type",
+		"run_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "contract_account",
+			"fieldtype": "Link",
+			"label": "Contract Account",
+			"options": "Finance Contract Account",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "schedule_version",
+			"fieldtype": "Int",
+			"label": "Schedule Version",
+			"default": "0"
+		},
+		{
+			"fieldname": "run_type",
+			"fieldtype": "Select",
+			"label": "Run Type",
+			"options": "QUOTE\nCONTRACT_CREATE\nRECALCULATION\nSIMULATION\nSCHEDULE_SNAPSHOT",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "run_status",
+			"fieldtype": "Select",
+			"label": "Run Status",
+			"options": "SUCCESS\nFAILED",
+			"default": "SUCCESS",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "idempotency_key",
+			"fieldtype": "Data",
+			"label": "Idempotency Key",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "input_hash",
+			"fieldtype": "Data",
+			"label": "Input Hash",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "input_json",
+			"fieldtype": "Long Text",
+			"label": "Input JSON"
+		},
+		{
+			"fieldname": "output_json",
+			"fieldtype": "Long Text",
+			"label": "Output JSON"
+		},
+		{
+			"fieldname": "explain_json",
+			"fieldtype": "Long Text",
+			"label": "Explain JSON"
+		},
+		{
+			"fieldname": "event_type",
+			"fieldtype": "Data",
+			"label": "Event Type"
+		},
+		{
+			"fieldname": "run_reference",
+			"fieldtype": "Data",
+			"label": "Run Reference"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Calc Run",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

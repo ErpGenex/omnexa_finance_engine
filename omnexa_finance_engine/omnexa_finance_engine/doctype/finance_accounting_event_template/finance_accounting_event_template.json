@@ -1,0 +1,140 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "field:template_code",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"template_code",
+		"title",
+		"event_type",
+		"product",
+		"column_break_omnexa_1",
+		"company_code",
+		"branch_code",
+		"country_code",
+		"debit_account_hint",
+		"column_break_omnexa_2",
+		"credit_account_hint",
+		"dimensions_json",
+		"narrative_template",
+		"posting_rules_json",
+		"status",
+		"template_owner"
+	],
+	"fields": [
+		{
+			"fieldname": "template_code",
+			"fieldtype": "Data",
+			"label": "Template Code",
+			"reqd": 1,
+			"unique": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "title",
+			"fieldtype": "Data",
+			"label": "Title",
+			"reqd": 1
+		},
+		{
+			"fieldname": "event_type",
+			"fieldtype": "Select",
+			"label": "Event Type",
+			"options": "ACCRUAL\nDISBURSEMENT\nREPAYMENT\nFEE\nREVERSAL",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "product",
+			"fieldtype": "Link",
+			"label": "Product",
+			"options": "Finance Product"
+		},
+		{
+			"fieldname": "company_code",
+			"fieldtype": "Data",
+			"label": "Company Code",
+			"default": "DEFAULT"
+		},
+		{
+			"fieldname": "branch_code",
+			"fieldtype": "Data",
+			"label": "Branch Code",
+			"default": "HQ"
+		},
+		{
+			"fieldname": "country_code",
+			"fieldtype": "Data",
+			"label": "Country Code",
+			"default": "INTL"
+		},
+		{
+			"fieldname": "debit_account_hint",
+			"fieldtype": "Data",
+			"label": "Debit Account Hint"
+		},
+		{
+			"fieldname": "credit_account_hint",
+			"fieldtype": "Data",
+			"label": "Credit Account Hint"
+		},
+		{
+			"fieldname": "dimensions_json",
+			"fieldtype": "Small Text",
+			"label": "Dimensions JSON"
+		},
+		{
+			"fieldname": "narrative_template",
+			"fieldtype": "Small Text",
+			"label": "Narrative Template"
+		},
+		{
+			"fieldname": "posting_rules_json",
+			"fieldtype": "Long Text",
+			"label": "Posting Rules JSON"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "DRAFT\nACTIVE\nRETIRED",
+			"default": "DRAFT",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "template_owner",
+			"fieldtype": "Link",
+			"label": "Template Owner",
+			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Accounting Event Template",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

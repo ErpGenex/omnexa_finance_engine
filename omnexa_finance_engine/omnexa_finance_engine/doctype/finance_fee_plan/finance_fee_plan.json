@@ -1,0 +1,139 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"product",
+		"plan_name",
+		"version",
+		"company_code",
+		"column_break_omnexa_1",
+		"branch_code",
+		"status",
+		"fee_type",
+		"fee_value",
+		"min_fee",
+		"column_break_omnexa_2",
+		"max_fee",
+		"penalty_rate",
+		"effective_from",
+		"effective_to",
+		"approval_role"
+	],
+	"fields": [
+		{
+			"fieldname": "product",
+			"fieldtype": "Link",
+			"label": "Product",
+			"options": "Finance Product",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "plan_name",
+			"fieldtype": "Data",
+			"label": "Plan Name",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "version",
+			"fieldtype": "Data",
+			"label": "Version",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company_code",
+			"fieldtype": "Data",
+			"label": "Company Code",
+			"default": "DEFAULT"
+		},
+		{
+			"fieldname": "branch_code",
+			"fieldtype": "Data",
+			"label": "Branch Code",
+			"default": "HQ"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "DRAFT\nACTIVE\nSUSPENDED\nRETIRED",
+			"default": "DRAFT"
+		},
+		{
+			"fieldname": "fee_type",
+			"fieldtype": "Select",
+			"label": "Fee Type",
+			"options": "FIXED\nPERCENTAGE\nTIERED\nPENALTY",
+			"reqd": 1
+		},
+		{
+			"fieldname": "fee_value",
+			"fieldtype": "Float",
+			"label": "Fee Value",
+			"reqd": 1
+		},
+		{
+			"fieldname": "min_fee",
+			"fieldtype": "Currency",
+			"label": "Minimum Fee"
+		},
+		{
+			"fieldname": "max_fee",
+			"fieldtype": "Currency",
+			"label": "Maximum Fee"
+		},
+		{
+			"fieldname": "penalty_rate",
+			"fieldtype": "Percent",
+			"label": "Penalty Rate"
+		},
+		{
+			"fieldname": "effective_from",
+			"fieldtype": "Date",
+			"label": "Effective From"
+		},
+		{
+			"fieldname": "effective_to",
+			"fieldtype": "Date",
+			"label": "Effective To"
+		},
+		{
+			"fieldname": "approval_role",
+			"fieldtype": "Data",
+			"label": "Approval Role"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Fee Plan",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

@@ -1,0 +1,97 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"event_type",
+		"aggregate_type",
+		"aggregate_id",
+		"status",
+		"payload_hash",
+		"payload_json",
+		"retry_count",
+		"last_error",
+		"event_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "event_type",
+			"fieldtype": "Data",
+			"label": "Event Type",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "aggregate_type",
+			"fieldtype": "Data",
+			"label": "Aggregate Type",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "aggregate_id",
+			"fieldtype": "Data",
+			"label": "Aggregate ID",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "PENDING\nPUBLISHED\nFAILED",
+			"default": "PENDING",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "payload_hash",
+			"fieldtype": "Data",
+			"label": "Payload Hash",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "payload_json",
+			"fieldtype": "Long Text",
+			"label": "Payload JSON",
+			"reqd": 1
+		},
+		{
+			"fieldname": "retry_count",
+			"fieldtype": "Int",
+			"label": "Retry Count",
+			"default": "0"
+		},
+		{
+			"fieldname": "last_error",
+			"fieldtype": "Small Text",
+			"label": "Last Error"
+		},
+		{
+			"fieldname": "event_reference",
+			"fieldtype": "Data",
+			"label": "Event Reference"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"module": "Omnexa Finance Engine",
+	"name": "Finance Event Outbox",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}
