@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"product",
 		"customer_name",
 		"status",
@@ -17,6 +18,7 @@
 		"periods",
 		"amortization",
 		"payment_frequency",
+		"tab_break_details",
 		"day_count",
 		"fx_valuation_mode",
 		"fx_rate_source",
@@ -31,6 +33,16 @@
 		"account_owner"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "product",
 			"fieldtype": "Link",

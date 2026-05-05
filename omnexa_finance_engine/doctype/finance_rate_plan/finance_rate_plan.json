@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"product",
 		"plan_name",
 		"version",
 		"column_break_omnexa_1",
 		"company_code",
 		"branch_code",
+		"tab_break_details",
 		"status",
 		"annual_rate",
 		"column_break_omnexa_2",
@@ -20,6 +22,16 @@
 		"rate_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "product",
 			"fieldtype": "Link",
