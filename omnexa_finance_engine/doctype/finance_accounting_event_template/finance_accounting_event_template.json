@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"template_code",
 		"title",
 		"event_type",
@@ -13,6 +14,7 @@
 		"company_code",
 		"branch_code",
 		"country_code",
+		"tab_break_details",
 		"debit_account_hint",
 		"column_break_omnexa_2",
 		"credit_account_hint",
@@ -23,6 +25,16 @@
 		"template_owner"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "template_code",
 			"fieldtype": "Data",

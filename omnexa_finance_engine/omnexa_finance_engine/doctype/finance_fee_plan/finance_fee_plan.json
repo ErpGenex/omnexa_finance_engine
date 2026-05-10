@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"product",
 		"plan_name",
 		"version",
@@ -13,6 +14,7 @@
 		"branch_code",
 		"status",
 		"fee_type",
+		"tab_break_details",
 		"fee_value",
 		"min_fee",
 		"column_break_omnexa_2",
@@ -23,6 +25,16 @@
 		"approval_role"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "product",
 			"fieldtype": "Link",

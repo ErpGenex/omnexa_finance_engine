@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"product_name",
 		"product_code",
 		"status",
@@ -16,6 +17,7 @@
 		"status_submitted_on",
 		"status_approved_by",
 		"status_approved_on",
+		"tab_break_details",
 		"currency",
 		"country_code",
 		"interest_method",
@@ -29,6 +31,16 @@
 		"classification_code"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "product_name",
 			"fieldtype": "Data",
