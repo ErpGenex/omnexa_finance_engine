@@ -5,11 +5,13 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"contract_account",
 		"schedule_version",
 		"run_type",
 		"run_status",
 		"idempotency_key",
+		"tab_break_details",
 		"input_hash",
 		"input_json",
 		"output_json",
@@ -18,6 +20,16 @@
 		"run_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "contract_account",
 			"fieldtype": "Link",
