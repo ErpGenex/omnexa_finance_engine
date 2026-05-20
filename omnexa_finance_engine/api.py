@@ -803,3 +803,64 @@ def _compute_compliance_score(std: dict, gov: dict) -> int:
 	if pending > 0:
 		governance = max(0, governance - min(10, pending))
 	return int(base + controls + governance)
+
+
+@frappe.whitelist()
+def preview_fs_posting_matrix(
+	scenario: str,
+	rou_asset: str = "0",
+	lease_liability: str = "0",
+	principal: str = "0",
+	settlement_cash: str = "0",
+) -> dict:
+	"""Preview GL lines for FS scenarios (no Journal Entry created — safe)."""
+	from omnexa_finance_engine.fs_posting_matrix import (
+		preview_early_termination_posting,
+		preview_lease_recognition_posting,
+		preview_loan_disbursement_posting,
+	)
+
+	scenario = (scenario or "").strip().lower()
+	if scenario == "lease_recognition":
+		lines = preview_lease_recognition_posting(
+			Decimal(str(rou_asset)), Decimal(str(lease_liability))
+		)
+	elif scenario == "loan_disbursement":
+		lines = preview_loan_disbursement_posting(Decimal(str(principal)))
+	elif scenario == "early_termination":
+		lines = preview_early_termination_posting(
+			Decimal(str(settlement_cash)),
+			Decimal(str(lease_liability)),
+			Decimal(str(rou_asset)),
+		)
+	else:
+		frappe.throw(f"Unknown scenario: {scenario}")
+	return {"scenario": scenario, "lines": lines}
+
+
+@frappe.whitelist()
+def post_fs_scenario_gl(
+	company: str,
+	scenario: str,
+	vertical: str | None = None,
+	branch: str | None = None,
+	posting_date: str | None = None,
+	rou_asset: str = "0",
+	lease_liability: str = "0",
+	principal: str = "0",
+	settlement_cash: str = "0",
+) -> dict:
+	"""Post FS matrix to Journal Entry when ``fs_live_gl_posting`` flag is ON (default OFF)."""
+	from omnexa_finance_engine.fs_gl_posting import post_fs_scenario_gl as _post
+
+	return _post(
+		company=company,
+		scenario=scenario,
+		vertical=vertical,
+		branch=branch,
+		posting_date=posting_date,
+		rou_asset=rou_asset,
+		lease_liability=lease_liability,
+		principal=principal,
+		settlement_cash=settlement_cash,
+	)
