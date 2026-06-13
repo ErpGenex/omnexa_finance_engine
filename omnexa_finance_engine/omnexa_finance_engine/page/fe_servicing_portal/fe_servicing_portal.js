@@ -1,0 +1,1 @@
+frappe.pages["fe-servicing-portal"].on_page_load = function(w){ frappe.ui.make_app_page({parent:w, title:"fe-servicing-portal", single_column:1}); };

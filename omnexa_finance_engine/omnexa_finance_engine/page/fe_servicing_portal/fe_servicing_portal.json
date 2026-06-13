@@ -1,0 +1,16 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Finance Engine",
+	"name": "fe-servicing-portal",
+	"page_name": "fe-servicing-portal",
+	"standard": "Yes",
+	"title": "Digital Channel",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "All"
+		}
+	]
+}
