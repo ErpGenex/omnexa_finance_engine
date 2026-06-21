@@ -15,7 +15,7 @@ add_to_apps_screen = [
 		"name": "omnexa_finance_engine",
 		"logo": "/assets/omnexa_finance_engine/logo.png",
 		"title": "FinanceCore",
-		"route": "/app/finance_engine",
+		"route": "/app/fe-servicing-portal",
 		"has_permission": "omnexa_core.omnexa_core.finance_demo.finance_app_permission.has_app_permission",
 	}
 ]
