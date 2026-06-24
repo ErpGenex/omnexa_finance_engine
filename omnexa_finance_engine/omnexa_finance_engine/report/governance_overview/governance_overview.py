@@ -12,6 +12,7 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 	prepare_filters,
 	sql_conditions,
 )
+from omnexa_core.omnexa_core.utils.report_charts import governance_policy_chart
 
 
 
@@ -41,4 +42,5 @@ def execute(filters=None):
 	}
 	if snaps:
 		row["snapshots"] = snaps
-	return columns, [row]
+	chart = governance_policy_chart(pending=pending, approved=approved, rejected=rejected)
+	return columns, [row], None, chart
