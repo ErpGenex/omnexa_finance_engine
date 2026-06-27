@@ -1,6 +1,10 @@
 from frappe.tests.utils import FrappeTestCase
 import frappe
 
+from omnexa_core.tests.test_helpers import suppress_workflow_attach_print
+
+suppress_workflow_attach_print()
+
 from omnexa_finance_engine.api import (
 	create_finance_contract,
 	get_calc_run_explainability,

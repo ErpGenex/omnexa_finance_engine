@@ -4,6 +4,10 @@ from frappe.tests.utils import FrappeTestCase
 import frappe
 from frappe.exceptions import ValidationError
 
+from omnexa_core.tests.test_helpers import suppress_workflow_attach_print
+
+suppress_workflow_attach_print()
+
 from omnexa_finance_engine.api import (
 	approve_finance_product_status_change,
 	create_finance_contract,
