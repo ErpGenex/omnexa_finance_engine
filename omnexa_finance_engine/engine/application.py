@@ -65,8 +65,8 @@ def build_quote(req: QuoteRequest) -> dict:
 			"principal": str(total_principal),
 			"interest": str(total_interest),
 			"fees": str(total_fees),
-			"total_due": str(total_due),
-		},
+			"total_due": str(total_due)
+	},
 		"lines": [
 			{
 				"period": ln.period,
@@ -76,27 +76,26 @@ def build_quote(req: QuoteRequest) -> dict:
 				"principal": str(ln.principal.amount),
 				"fees": str(ln.fees.amount),
 				"total_due": str(ln.total_due.amount),
-				"closing_principal": str(ln.closing_principal.amount),
-			}
-			for ln in lines
-		],
+				"closing_principal": str(ln.closing_principal.amount)
 	}
+			for ln in lines
+		]}
 
 
 def make_explainability(req: QuoteRequest, quote_out: dict, event_type: str = "QUOTE") -> dict:
 	return {
 		"event_type": event_type,
-		"policy_basis": {"interest_method": req.amortization, "day_count": req.day_count},
+		"policy_basis": {"interest_method": req.amortization, "day_count": req.day_count
+	},
 		"inputs": {
 			"principal": str(req.principal),
 			"currency": req.currency,
 			"annual_rate": str(req.annual_rate),
 			"periods": req.periods,
-			"payment_frequency": req.payment_frequency,
-		},
+			"payment_frequency": req.payment_frequency
+	},
 		"totals": quote_out.get("totals", {}),
-		"reason_codes": ["BASE_PRODUCT_POLICY", "IFRS_GAAP_CALC_TRACE_ENABLED"],
-	}
+		"reason_codes": ["BASE_PRODUCT_POLICY", "IFRS_GAAP_CALC_TRACE_ENABLED"]}
 
 
 def payload_hash(payload: dict) -> str:

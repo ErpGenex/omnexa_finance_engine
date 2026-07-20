@@ -35,10 +35,11 @@ class TestFinanceEngineWave3(FrappeTestCase):
 				"email": email,
 				"first_name": "Checker",
 				"send_welcome_email": 0,
-				"enabled": 1,
-			}
+				"enabled": 1
+	}
 		)
-		doc.append("roles", {"role": "System Manager"})
+		doc.append("roles", {"role": "System Manager"
+	})
 		doc.insert(ignore_permissions=True)
 
 	def _active_product(self) -> str:
@@ -46,7 +47,8 @@ class TestFinanceEngineWave3(FrappeTestCase):
 			{
 				"doctype": "Finance Product",
 				"product_name": "Wave3 Test Product",
-				"product_code": f"W3-{frappe.generate_hash(length=8)}",
+				"product_code": f"W3-{frappe.generate_hash(length=8)
+	}",
 				"status": "ACTIVE",
 				"company_code": "CO1",
 				"branch_code": "BR1",
@@ -55,8 +57,8 @@ class TestFinanceEngineWave3(FrappeTestCase):
 				"default_annual_rate": 0.12,
 				"default_periods": 12,
 				"payment_frequency": "MONTHLY",
-				"day_count": "ACT_365F",
-			}
+				"day_count": "ACT_365F"
+	}
 		)
 		doc.insert(ignore_permissions=True)
 		return doc.name
@@ -67,15 +69,16 @@ class TestFinanceEngineWave3(FrappeTestCase):
 			{
 				"doctype": "Finance Product",
 				"product_name": "Draft Only",
-				"product_code": f"DR-{frappe.generate_hash(length=8)}",
+				"product_code": f"DR-{frappe.generate_hash(length=8)
+	}",
 				"status": "DRAFT",
 				"currency": currency,
 				"interest_method": "ANNUITY",
 				"default_annual_rate": 0.1,
 				"default_periods": 12,
 				"payment_frequency": "MONTHLY",
-				"day_count": "ACT_365F",
-			}
+				"day_count": "ACT_365F"
+	}
 		)
 		doc.insert(ignore_permissions=True)
 		with self.assertRaises(ValidationError):
@@ -126,13 +129,14 @@ class TestFinanceEngineWave3(FrappeTestCase):
 		frappe.get_doc(
 			{
 				"doctype": "Finance Accounting Event Template",
-				"template_code": f"ACC-{frappe.generate_hash(length=6)}",
+				"template_code": f"ACC-{frappe.generate_hash(length=6)
+	}",
 				"title": "Test Accrual",
 				"event_type": "ACCRUAL",
 				"status": "ACTIVE",
 				"debit_account_hint": "LOANS_RECEIVABLE",
-				"credit_account_hint": "INTEREST_INCOME",
-			}
+				"credit_account_hint": "INTEREST_INCOME"
+	}
 		).insert(ignore_permissions=True)
 		templates = list_finance_accounting_templates(event_type="ACCRUAL")
 		self.assertTrue(any(t.get("event_type") == "ACCRUAL" for t in templates))

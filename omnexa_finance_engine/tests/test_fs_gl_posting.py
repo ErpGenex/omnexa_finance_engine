@@ -14,7 +14,8 @@ class TestFsGlPosting(FrappeTestCase):
 		if not company:
 			self.skipTest("No company")
 		old = frappe.local.conf.get("omnexa_feature_flags")
-		frappe.local.conf["omnexa_feature_flags"] = {"fs_live_gl_posting": False}
+		frappe.local.conf["omnexa_feature_flags"] = {"fs_live_gl_posting": False
+	}
 		try:
 			out = post_fs_scenario_gl(
 				company=company,

@@ -21,8 +21,8 @@ VERTICAL_DEFAULTS: dict[str, str] = {
 	"sme_retail": "loan_disbursement",
 	"credit_engine": "loan_disbursement",
 	"credit_risk": "loan_disbursement",
-	"alm": "loan_disbursement",
-}
+	"alm": "loan_disbursement"
+	}
 
 
 def preview_gl_for_vertical(
@@ -53,4 +53,5 @@ def preview_gl_for_vertical(
 	else:
 		lines = preview_loan_disbursement_posting(Decimal(str(principal)))
 
-	return {"vertical": vertical, "scenario": scenario, "lines": lines}
+	return {"vertical": vertical, "scenario": scenario, "lines": lines
+	}

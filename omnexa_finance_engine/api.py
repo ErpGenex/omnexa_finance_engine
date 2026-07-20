@@ -85,11 +85,10 @@ def preview_schedule(
 				"principal": str(ln.principal.amount),
 				"fees": str(ln.fees.amount),
 				"total_due": str(ln.total_due.amount),
-				"closing_principal": str(ln.closing_principal.amount),
-			}
-			for ln in lines
-		],
+				"closing_principal": str(ln.closing_principal.amount)
 	}
+			for ln in lines
+		]}
 
 
 @frappe.whitelist()
@@ -109,7 +108,8 @@ def preview_schedule_with_metrics(**kwargs) -> dict:
 		irr = xirr(flows)
 	except Exception:
 		irr = None
-	out["metrics"] = {"xirr": irr}
+	out["metrics"] = {"xirr": irr
+	}
 	return out
 
 
@@ -199,8 +199,8 @@ def _save_calc_run(
 			"input_json": json.dumps(_jsonable(input_payload), sort_keys=True, separators=(",", ":")),
 			"output_json": json.dumps(_jsonable(output_payload), sort_keys=True, separators=(",", ":")),
 			"explain_json": json.dumps(_jsonable(explain_payload), sort_keys=True, separators=(",", ":")),
-			"event_type": event_type or run_type,
-		}
+			"event_type": event_type or run_type
+	}
 	)
 	doc.insert(ignore_permissions=True)
 	return doc.name
@@ -216,8 +216,8 @@ def _publish_finance_event(event_type: str, aggregate_type: str, aggregate_id: s
 			"status": "PENDING",
 			"payload_hash": payload_hash(payload),
 			"payload_json": json.dumps(_jsonable(payload), sort_keys=True, separators=(",", ":")),
-			"retry_count": 0,
-		}
+			"retry_count": 0
+	}
 	)
 	event_doc.insert(ignore_permissions=True)
 	return event_doc.name
@@ -270,13 +270,15 @@ def quote_finance_product(
 	explain = make_explainability(req=req, quote_out=quote, event_type="QUOTE")
 	run_name = _save_calc_run(
 		run_type="QUOTE",
-		input_payload={"request": req.__dict__},
+		input_payload={"request": req.__dict__
+	},
 		output_payload=quote,
 		explain_payload=explain,
 		idempotency_key=idempotency_key,
 		event_type="QUOTE",
 	)
-	out = {"quote": quote, "explainability": explain, "calc_run": run_name}
+	out = {"quote": quote, "explainability": explain, "calc_run": run_name
+	}
 	if idempotency_key:
 		set_cached_idempotent_result("quote_finance_product", idempotency_key, out)
 	return out
@@ -345,13 +347,14 @@ def create_finance_contract(
 			"fx_valuation_date": _to_date(fx_valuation_date) if fx_valuation_date else None,
 			"start_date": _to_date(start_date),
 			"first_due_date": _to_date(first_due_date),
-			"ifrs9_stage": "STAGE_1",
-		}
+			"ifrs9_stage": "STAGE_1"
+	}
 	)
 	contract.insert(ignore_permissions=True)
 	run_name = _save_calc_run(
 		run_type="CONTRACT_CREATE",
-		input_payload={"request": req.__dict__, "product": product, "customer_name": customer_name},
+		input_payload={"request": req.__dict__, "product": product, "customer_name": customer_name
+	},
 		output_payload=quote,
 		explain_payload=explain,
 		contract_account=contract.name,
@@ -364,9 +367,11 @@ def create_finance_contract(
 		event_type="CONTRACT_CREATED",
 		aggregate_type="Finance Contract Account",
 		aggregate_id=contract.name,
-		payload={"contract_account": contract.name, "calc_run": run_name, "event_type": "CONTRACT_CREATED"},
+		payload={"contract_account": contract.name, "calc_run": run_name, "event_type": "CONTRACT_CREATED"
+	},
 	)
-	out = {"contract_account": contract.name, "calc_run": run_name, "quote": quote, "explainability": explain}
+	out = {"contract_account": contract.name, "calc_run": run_name, "quote": quote, "explainability": explain
+	}
 	if idempotency_key:
 		set_cached_idempotent_result("create_finance_contract", idempotency_key, out)
 	return out
@@ -410,13 +415,14 @@ def recalculate_finance_contract(
 			"mode": contract.fx_valuation_mode,
 			"source": contract.fx_rate_source,
 			"rate_applied": str(fx_rate),
-			"valuation_date": str(contract.fx_valuation_date) if contract.fx_valuation_date else None,
-		}
+			"valuation_date": str(contract.fx_valuation_date) if contract.fx_valuation_date else None
+	}
 
 	explain = make_explainability(req=req, quote_out=quote, event_type=event_type)
 	run_name = _save_calc_run(
 		run_type="RECALCULATION",
-		input_payload={"request": req.__dict__, "event_type": event_type},
+		input_payload={"request": req.__dict__, "event_type": event_type
+	},
 		output_payload=quote,
 		explain_payload=explain,
 		contract_account=contract.name,
@@ -438,9 +444,11 @@ def recalculate_finance_contract(
 		event_type=event_type,
 		aggregate_type="Finance Contract Account",
 		aggregate_id=contract.name,
-		payload={"contract_account": contract.name, "calc_run": run_name, "event_type": event_type},
+		payload={"contract_account": contract.name, "calc_run": run_name, "event_type": event_type
+	},
 	)
-	out = {"contract_account": contract.name, "calc_run": run_name, "quote": quote, "explainability": explain}
+	out = {"contract_account": contract.name, "calc_run": run_name, "quote": quote, "explainability": explain
+	}
 	if idempotency_key:
 		set_cached_idempotent_result(cache_ns, idempotency_key, out)
 	return out
@@ -479,8 +487,8 @@ def get_calc_run_explainability(calc_run: str | None = None, contract_account: s
 				"input_hash": row.input_hash,
 				"output": output_payload,
 				"explainability": explain,
-				"created_at": row.creation,
-			}
+				"created_at": row.creation
+	}
 		)
 	return out
 
@@ -498,7 +506,8 @@ def record_schedule_snapshot_for_contract(contract_account: str, idempotency_key
 	quote = build_quote(req)
 	explain = make_explainability(req=req, quote_out=quote, event_type="SCHEDULE_SNAPSHOT")
 	next_ver = int(contract.schedule_version_seq or 0) + 1
-	input_payload = {"request": asdict(req), "contract_account": contract_account, "schedule_version": next_ver}
+	input_payload = {"request": asdict(req), "contract_account": contract_account, "schedule_version": next_ver
+	}
 	run_name = _save_calc_run(
 		run_type="SCHEDULE_SNAPSHOT",
 		input_payload=input_payload,
@@ -512,7 +521,8 @@ def record_schedule_snapshot_for_contract(contract_account: str, idempotency_key
 	contract.schedule_version_seq = next_ver
 	contract.last_calc_run = run_name
 	contract.save(ignore_permissions=True)
-	out = {"contract_account": contract.name, "calc_run": run_name, "schedule_version": next_ver, "quote": quote}
+	out = {"contract_account": contract.name, "calc_run": run_name, "schedule_version": next_ver, "quote": quote
+	}
 	if idempotency_key:
 		set_cached_idempotent_result(cache_ns, idempotency_key, out)
 	return out
@@ -522,7 +532,8 @@ def record_schedule_snapshot_for_contract(contract_account: str, idempotency_key
 def list_schedule_versions(contract_account: str, limit: int = 50) -> list[dict]:
 	return frappe.get_all(
 		"Finance Calc Run",
-		filters={"contract_account": contract_account, "run_type": "SCHEDULE_SNAPSHOT"},
+		filters={"contract_account": contract_account, "run_type": "SCHEDULE_SNAPSHOT"
+	},
 		fields=["name", "schedule_version", "input_hash", "creation"],
 		order_by="schedule_version desc",
 		limit_page_length=int(limit),
@@ -541,7 +552,8 @@ def replay_finance_calc_run(calc_run: str) -> dict:
 	stored = json.loads(doc.output_json or "{}")
 	a = json.dumps(_jsonable(new_quote), sort_keys=True, separators=(",", ":"))
 	b = json.dumps(_jsonable(stored), sort_keys=True, separators=(",", ":"))
-	return {"calc_run": calc_run, "outputs_identical": a == b, "recomputed": new_quote, "stored": stored}
+	return {"calc_run": calc_run, "outputs_identical": a == b, "recomputed": new_quote, "stored": stored
+	}
 
 
 @frappe.whitelist()
@@ -558,7 +570,8 @@ def submit_finance_product_status_change(product: str, proposed_status: str) -> 
 	doc.status_approved_by = None
 	doc.status_approved_on = None
 	doc.save(ignore_permissions=True)
-	return {"product": product, "pending_status": proposed_status}
+	return {"product": product, "pending_status": proposed_status
+	}
 
 
 @frappe.whitelist()
@@ -575,7 +588,8 @@ def approve_finance_product_status_change(product: str) -> dict:
 	doc.status_approved_by = frappe.session.user
 	doc.status_approved_on = now_datetime()
 	doc.save(ignore_permissions=True)
-	return {"product": product, "status": doc.status}
+	return {"product": product, "status": doc.status
+	}
 
 
 @frappe.whitelist()
@@ -583,12 +597,14 @@ def reject_finance_product_status_change(product: str, reason: str = "") -> dict
 	doc = frappe.get_doc("Finance Product", product)
 	doc.pending_status = None
 	doc.save(ignore_permissions=True)
-	return {"product": product, "rejected": True, "reason": reason}
+	return {"product": product, "rejected": True, "reason": reason
+	}
 
 
 @frappe.whitelist()
 def list_finance_accounting_templates(event_type: str | None = None, status: str = "ACTIVE") -> list[dict]:
-	filters: dict = {"status": status}
+	filters: dict = {"status": status
+	}
 	if event_type:
 		filters["event_type"] = event_type
 	return frappe.get_all(
@@ -644,7 +660,7 @@ def simulate_finance_contract_scenario(
 		"scenario_name": scenario_name,
 		"rate_shift_bps": int(rate_shift_bps),
 		"fee_multiplier": str(fee_multiplier),
-		"fx_rate_override": str(fx_rate_override) if fx_rate_override is not None else None,
+		"fx_rate_override": str(fx_rate_override) if fx_rate_override is not None else None
 	}
 	scenario_doc = frappe.get_doc(
 		{
@@ -655,19 +671,22 @@ def simulate_finance_contract_scenario(
 			"idempotency_key": idempotency_key,
 			"input_hash": payload_hash(input_payload),
 			"input_json": json.dumps(_jsonable(input_payload), sort_keys=True, separators=(",", ":")),
-			"scenario_json": json.dumps({"rate_shift_bps": rate_shift_bps, "fee_multiplier": str(fee_multiplier)}, sort_keys=True),
+			"scenario_json": json.dumps({"rate_shift_bps": rate_shift_bps, "fee_multiplier": str(fee_multiplier)
+	}, sort_keys=True),
 			"output_json": json.dumps(_jsonable(quote), sort_keys=True, separators=(",", ":")),
-			"explain_json": json.dumps(_jsonable(explain), sort_keys=True, separators=(",", ":")),
-		}
+			"explain_json": json.dumps(_jsonable(explain), sort_keys=True, separators=(",", ":"))
+	}
 	)
 	scenario_doc.insert(ignore_permissions=True)
 	_publish_finance_event(
 		event_type="SCENARIO_SIMULATED",
 		aggregate_type="Finance Contract Account",
 		aggregate_id=contract_account,
-		payload={"contract_account": contract_account, "scenario_run": scenario_doc.name, "scenario_name": scenario_name},
+		payload={"contract_account": contract_account, "scenario_run": scenario_doc.name, "scenario_name": scenario_name
+	},
 	)
-	out = {"scenario_run": scenario_doc.name, "contract_account": contract_account, "quote": quote, "explainability": explain}
+	out = {"scenario_run": scenario_doc.name, "contract_account": contract_account, "quote": quote, "explainability": explain
+	}
 	if idempotency_key:
 		set_cached_idempotent_result(cache_ns, idempotency_key, out)
 	return out
@@ -716,7 +735,7 @@ def convert_amount(
 		"target_currency": target_currency,
 		"amount": str(money.amount),
 		"rate": str(quote.rate),
-		"converted_amount": str(out.amount),
+		"converted_amount": str(out.amount)
 	}
 
 
@@ -789,8 +808,7 @@ def get_regulatory_dashboard() -> dict:
 		"standards": std.get("standards", []),
 		"activity_controls": std.get("activity_controls", []),
 		"governance": gov,
-		"compliance_score": _compute_compliance_score(std=std, gov=gov),
-	}
+		"compliance_score": _compute_compliance_score(std=std, gov=gov)}
 
 
 def _compute_compliance_score(std: dict, gov: dict) -> int:
@@ -835,7 +853,8 @@ def preview_fs_posting_matrix(
 		)
 	else:
 		frappe.throw(f"Unknown scenario: {scenario}")
-	return {"scenario": scenario, "lines": lines}
+	return {"scenario": scenario, "lines": lines
+	}
 
 
 @frappe.whitelist()

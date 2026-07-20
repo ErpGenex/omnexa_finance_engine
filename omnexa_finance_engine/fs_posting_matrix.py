@@ -20,8 +20,8 @@ class PostingLine:
 			"account_role": self.account_role,
 			"debit": str(self.debit),
 			"credit": str(self.credit),
-			"remarks": self.remarks,
-		}
+			"remarks": self.remarks
+	}
 
 
 def preview_lease_recognition_posting(

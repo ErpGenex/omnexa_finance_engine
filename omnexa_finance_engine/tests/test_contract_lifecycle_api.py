@@ -27,15 +27,16 @@ class TestFinanceContractLifecycleApi(FrappeTestCase):
 			{
 				"doctype": "Finance Product",
 				"product_name": "Test Personal Loan",
-				"product_code": f"TST-{frappe.generate_hash(length=8)}",
+				"product_code": f"TST-{frappe.generate_hash(length=8)
+	}",
 				"status": "ACTIVE",
 				"currency": self._currency(),
 				"interest_method": "ANNUITY",
 				"default_annual_rate": 0.12,
 				"default_periods": 12,
 				"payment_frequency": "MONTHLY",
-				"day_count": "ACT_365F",
-			}
+				"day_count": "ACT_365F"
+	}
 		)
 		doc.insert(ignore_permissions=True)
 		return doc.name
