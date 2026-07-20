@@ -1,0 +1,2 @@
+[post_model_sync]
+omnexa_finance_engine.patches.v1_0.sync_fe_workspace_full

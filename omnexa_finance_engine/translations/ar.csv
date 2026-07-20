@@ -1,0 +1,169 @@
+Account Owner,حساب Owner
+Accounting Templates,محاسبة Templates
+Active Products,نشط Products
+Actor,Actor
+Address,العنوان
+Aggregate ID,Aggregate معرف
+Aggregate Type,Aggregate نوع
+Amended From,Amended From
+Amortization,Amortization
+Annual Rate,Annual معدل
+App,App
+Approval Role,موافقة دور
+Approved,معتمد
+Approved At,معتمد At
+Audit Snapshots,تدقيق Snapshots
+Bank Account,بنك حساب
+Book by status Bar,Book حسب حالة Bar
+Branch Code,فرع كود
+Calc run mix Perc,Calc run mix Perc
+Calc Runs,Calc Runs
+Calculation Runs,Calculation Runs
+Checker,Checker
+Checker must differ from maker,Checker must differ from maker
+Classification Code,Classification كود
+Company Code,شركة كود
+Compounding Basis,Compounding Basis
+Contact,جهة الاتصال
+Contract Account,عقد حساب
+Contract Accounts,عقد حسابات
+"Contracting, Disbursement & Servicing","Contracting, Disbursement & Servicing"
+Cost Center,مركز التكلفة
+Country Code,Country كود
+Created At,Created At
+Credit Account Hint,ائتمان حساب Hint
+Currency,Currency
+Currency Exchange Rate,Currency Exchange معدل
+Current Outstanding,Current Outstanding
+Customer & KYC,العميل والتحقق من الهوية (KYC)
+Customer Name,عميل اسم
+Customer Profile,ملف العميل
+Day Count,Day عدد
+Debit Account Hint,Debit حساب Hint
+Default Annual Rate,افتراضي Annual معدل
+Default Periods,افتراضي Periods
+Details,التفاصيل
+Dimensions JSON,Dimensions JSON
+Effective From,Effective From
+Effective To,Effective إلى
+Event Outbox,Event Outbox
+Event Reference,Event Reference
+Event Type,Event نوع
+Explain JSON,Explain JSON
+Fee Plans,Fee Plans
+Fee Type,Fee نوع
+Fee Value,Fee Value
+Finance Accounting Event Template,مالية محاسبة Event Template
+Finance Audit Snapshot,مالية تدقيق لقطة
+Finance Calc Run,مالية Calc Run
+Finance Calc Run Trend,مالية Calc Run اتجاه
+Finance Contract Account,مالية عقد حساب
+Finance Contract Account Trend,مالية عقد حساب اتجاه
+Finance Contract Account Vol,مالية عقد حساب Vol
+Finance Engine,مالية محرك
+Finance Engine Governance,مالية محرك حوكمة
+Finance Event Outbox,مالية Event Outbox
+Finance Fee Plan,مالية Fee خطة
+Finance Policy Version,مالية سياسة إصدار
+Finance Product,مالية منتج
+Finance Product Mix,مالية منتج Mix
+Finance Product must be ACTIVE to book contracts,مالية منتج must be نشط إلى book contracts
+Finance Products,مالية Products
+Finance Rate Plan,مالية معدل خطة
+Finance Scenario Run,مالية Scenario Run
+First Due Date,First استحقاق تاريخ
+Fiscal Year,Fiscal Year
+FX Forward Rate,FX Forward معدل
+FX Rate Source,FX معدل Source
+FX Valuation Date,FX Valuation تاريخ
+FX Valuation Mode,FX Valuation Mode
+GAAP Enabled,GAAP Enabled
+General Ledger,عام دفتر أستاذ
+Governance,حوكمة
+Governance Overview,حوكمة نظرة عامة
+Idempotency Key,Idempotency مفتاح
+IFRS9 Enabled,IFRS9 Enabled
+IFRS9 mix Pie,IFRS9 mix Pie
+IFRS9 Stage,IFRS9 Stage
+Input Hash,Input Hash
+Input JSON,Input JSON
+Inputs JSON,Inputs JSON
+inputs/outputs must be JSON objects,inputs outputs must be JSON objects
+Interest Method,Interest Method
+Invalid lifecycle status,Invalid lifecycle حالة
+Journal Entry,قيد يومية
+Last Calc Run,Last Calc Run
+Last Error,Last خطأ
+Maker,Maker
+Maker and checker must be different users.,Maker و checker must be different users.
+Maximum Fee,Maximum Fee
+Minimum Fee,Minimum Fee
+Mode of Payment,طريقة الدفع
+Narrative Template,Narrative Template
+No pending status change,No معلق حالة change
+Omnexa Finance Engine,Omnexa مالية محرك
+Origination & Product Setup,Origination & منتج إعداد
+Output JSON,Output JSON
+Outputs JSON,Outputs JSON
+Overview,نظرة عامة
+Payload Hash,Payload Hash
+Payload JSON,Payload JSON
+payload must be a JSON object,payload must be a JSON object
+Payment Entry,دفعة قيد
+Payment Frequency,دفعة Frequency
+Penalty Rate,Penalty معدل
+Pending,قيد الانتظار
+Pending Outbox,معلق Outbox
+Pending Status Change,معلق حالة Change
+Periods,Periods
+Plan Name,خطة اسم
+Policies by Status,Policies حسب حالة
+Policies Total,Policies إجمالي
+Policy Name,سياسة اسم
+Policy Ref,سياسة Ref
+Policy Reference,سياسة Reference
+Policy Version,سياسة إصدار
+Policy version already exists.,سياسة إصدار already exists.
+Policy version not found.,سياسة إصدار not found.
+Policy Versions,سياسة Versions
+Posting Rules JSON,Posting Rules JSON
+Principal,Principal
+Process Name,Process اسم
+Product,منتج
+Product Code,منتج كود
+Product Name,منتج اسم
+Rate Plans,معدل Plans
+Rate Reference,معدل Reference
+Rejected,مرفوض
+Rejected At,مرفوض At
+Rejection Reason,Rejection Reason
+Rejector,Rejector
+Replay only supported when input_json contains a schedule request,Replay only supported when input json contains a schedule طلب
+Reports & Analytics,تقارير & تحليلات
+Retry Count,Retry عدد
+"Risk, Governance & Compliance","مخاطر, حوكمة & امتثال"
+Run Reference,Run Reference
+Run Status,Run حالة
+Run Type,Run نوع
+Sales Invoice,فاتورة بيع
+Scenario JSON,Scenario JSON
+Scenario Name,Scenario اسم
+Scenario Reference,Scenario Reference
+Scenario Runs,Scenario Runs
+Schedule Version,Schedule إصدار
+Schedule Version Sequence,Schedule إصدار Sequence
+Snapshot Hash,لقطة Hash
+Snapshot Reference,لقطة Reference
+Snapshots (Last Month),Snapshots (Last Month)
+Start Date,بداية تاريخ
+Status,الحالة
+Status Approved By,حالة معتمد حسب
+Status Approved On,حالة معتمد On
+Status Submitted By,حالة Submitted حسب
+Status Submitted On,حالة Submitted On
+Template Code,Template كود
+Template Owner,Template Owner
+Title,العنوان
+Trial Balance,Trial رصيد
+Version,إصدار
+You do not have checker approval role.,You do not have checker موافقة دور.
